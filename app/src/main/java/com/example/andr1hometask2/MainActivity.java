@@ -36,62 +36,6 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
         btn = findViewById(R.id.btn);
 
-        number1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                num1 = Integer.valueOf(s.toString());
-                num2 = Integer.valueOf(s.toString());
-                num3 = Integer.valueOf(s.toString());
-            }
-        });
-
-        number2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                num2 = Integer.valueOf(s.toString());
-            }
-        });
-
-        number3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                num3 = Integer.valueOf(s.toString());
-            }
-        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(KEY1, num1);
-        outState.putInt(KEY2, num2);
-        outState.putInt(KEY3, num3);
+        outState.putInt(KEY1, Integer.valueOf(number1.toString()));
+        outState.putInt(KEY2, Integer.valueOf(number2.toString()));
+        outState.putInt(KEY3, Integer.valueOf(number3.toString()));
         outState.putInt(RESULT, res);
     }
 
